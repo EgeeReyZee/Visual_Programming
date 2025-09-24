@@ -4,8 +4,7 @@ import kotlin.math.pow
 import java.util.Timer
 import java.util.TimerTask
 
-class Human
-{
+open class Human {
     var name: String = ""
     var surname: String = ""
     var second_name: String = ""
@@ -16,7 +15,7 @@ class Human
     var age: Int = -1
     var speed: Double = -1.0
 
-    constructor(_name: String, _surname: String, _second: String, _age: Int, _speed: Double){
+    constructor(_name: String, _surname: String, _second: String, _age: Int, _speed: Double) {
         name = _name
         surname = _surname
         second_name = _second
@@ -36,7 +35,7 @@ class Human
         y = _toY
         println("$name пошел на позицию: (${"%.2f".format(x)}; ${"%.2f".format(y)})")
     }
-    fun freeWalking(_sec: Int) {
+    open fun move(_sec: Int) {
         for (n in 1 .. _sec) {
             val curX = x
             val curY = y
@@ -56,33 +55,40 @@ class Human
         }
     }
 }
+class Driver(name: String, surname: String, second_name: String, age: Int, speed: Double, val car_model: String) :
+    Human(name, surname,  second_name, age, speed) {
+    override fun move(_sec: Int) {
+        Thread {
+
+            if (Random.nextBoolean() == true) {
+                if (Random.nextBoolean() == true) {
+                    x += speed
+                } else {
+                    x -= speed
+                }
+            } else {
+                if (Random.nextBoolean() == true) {
+                    y += speed
+                } else {
+                    y -= speed
+                }
+            }
+        }
+    }
+}
 
 fun main() {
     val humans = arrayOf(
         Human("Иван", "Иванов", "Иванович", 25, 8.5),
         Human("Петр", "Петров", "Петрович", 30, 7.8),
-        Human("Сергей", "Сидоров", "Сергеевич", 35, 9.2),
-        Human("Алексей", "Смирнов", "Алексеевич", 28, 8.1),
-        Human("Дмитрий", "Кузнецов", "Дмитриевич", 32, 7.5),
-        Human("Андрей", "Попов", "Андреевич", 27, 8.9),
-        Human("Максим", "Васильев", "Максимович", 29, 7.2),
-        Human("Владимир", "Соколов", "Владимирович", 31, 8.3),
-        Human("Артем", "Михайлов", "Артемович", 26, 9.0)
+        Human("Сергей", "Сергеев", "Сергеевич", 35, 9.2),
     )
 
-    humans.forEachIndexed { index, human ->
-        val row = index / 5
-        val col = index % 5
-        human.x = col * 30.0
-        human.y = row * 25.0
-        println("${human.name} ${human.surname} - Стартовая позиция: (${"%.2f".format(human.x)}, ${"%.2f".format(human.y)})")
-    }
+    val Vasya: Driver = Driver("Василий", "Абрамович", "Абрамович", 28, 23.5, "Alfa Romeo")
 
-    val simulationTimeSeconds = 45
-    println("\nstarts on  $simulationTimeSeconds seconds")
-    println("number of members: ${humans.size}")
-    humans.forEachIndexed { index, human ->
-        human.freeWalking(45)
-        human.position()
+    for (human in humans) {
+        human.move(45)
     }
+    Vasya.move(45)
+    Thread.sleep(2000)
 }
