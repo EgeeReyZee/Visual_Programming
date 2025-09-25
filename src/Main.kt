@@ -90,5 +90,5 @@ fun main() {
         human.move(45)
     }
     Vasya.move(45)
-    Thread.sleep(2000)
+    Thread.sleep(1000)
 }
