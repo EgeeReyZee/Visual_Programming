@@ -88,7 +88,9 @@ fun main() {
 
     for (human in humans) {
         human.move(45)
+        human.position()
     }
     Vasya.move(45)
+    Vasya.position()
     Thread.sleep(1000)
 }
