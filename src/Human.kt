@@ -33,8 +33,8 @@ open class Human {
         y = _toY
         println("$name пошел на позицию: (${"%.2f".format(x)}; ${"%.2f".format(y)})")
     }
-    open fun move(_sec: Int) {
-        for (n in 1 .. _sec) {
+    open fun move() {
+        Thread {
             val curX = x
             val curY = y
 
@@ -50,6 +50,6 @@ open class Human {
             } else {
                 y -= movedY
             }
-        }
+        }.start()
     }
 }
