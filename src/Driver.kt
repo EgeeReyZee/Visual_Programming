@@ -2,7 +2,7 @@ import kotlin.random.Random
 
 class Driver(name: String, surname: String, second_name: String, age: Int, speed: Double, val car_model: String) :
     Human(name, surname,  second_name, age, speed) {
-    override fun move(_sec: Int) {
+    override fun move() {
         Thread {
 
             if (Random.Default.nextBoolean() == true) {
@@ -18,6 +18,6 @@ class Driver(name: String, surname: String, second_name: String, age: Int, speed
                     y -= speed
                 }
             }
-        }
+        }.start()
     }
 }
