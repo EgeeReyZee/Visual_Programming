@@ -70,7 +70,7 @@ fun main() {
         Human("Артем", "Михайлов", "Артемович", 26, 9.0)
     )
 
-    humans.forEachIndexed { index, human ->
+    for (human in humans) {
         val row = index / 5
         val col = index % 5
         human.x = col * 30.0
@@ -81,7 +81,7 @@ fun main() {
     val simulationTimeSeconds = 45
     println("\nstarts on  $simulationTimeSeconds seconds")
     println("number of members: ${humans.size}")
-    humans.forEachIndexed { index, human ->
+    for (human in humans)
         human.freeWalking(45)
         human.position()
     }
