@@ -81,7 +81,7 @@ fun main() {
     val simulationTimeSeconds = 45
     println("\nstarts on  $simulationTimeSeconds seconds")
     println("number of members: ${humans.size}")
-    for (human in humans)
+    for (human in humans) {
         human.freeWalking(45)
         human.position()
     }
