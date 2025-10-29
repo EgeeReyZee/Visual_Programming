@@ -7,14 +7,19 @@ fun main() {
         Human("Сергей", "Сергеев", "Сергеевич", 35, 9.2),
     )
 
-    val Vasya: Driver = Driver("Василий", "Абрамович", "Абрамович", 28, 23.5, "Alfa Romeo")
-    while (true) {
-        for (human in humans) {
-            human.move()
-            human.position()
-        }
-        Vasya.move()
-        Vasya.position()
-        Thread.sleep(1000)
+    for (human in humans) {
+        val row = index / 5
+        val col = index % 5
+        human.x = col * 30.0
+        human.y = row * 25.0
+        println("${human.name} ${human.surname} - Стартовая позиция: (${"%.2f".format(human.x)}, ${"%.2f".format(human.y)})")
+    }
+
+    val simulationTimeSeconds = 45
+    println("\nstarts on  $simulationTimeSeconds seconds")
+    println("number of members: ${humans.size}")
+    for (human in humans) {
+        human.freeWalking(45)
+        human.position()
     }
 }
