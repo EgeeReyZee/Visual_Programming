@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="false">
+        <shape android:shape="rectangle">
+            <corners
+                android:bottomLeftRadius="24dp"
+                android:bottomRightRadius="24dp"
+                android:topLeftRadius="24dp"
+                android:topRightRadius="24dp" />
+
+            <gradient android:type="radial"
+                android:gradientRadius="100"
+                android:startColor="@color/button_operand_centre"
+                android:endColor="@color/button_operand_edge">
+            </gradient>
+        </shape>
+    </item>
+
+    <item android:state_pressed="true">
+        <shape android:shape="rectangle">
+            <corners
+                android:bottomLeftRadius="48dp"
+                android:bottomRightRadius="48dp"
+                android:topLeftRadius="48dp"
+                android:topRightRadius="48dp" />
+
+            <gradient android:type="radial"
+                android:gradientRadius="100"
+                android:startColor="@color/button_operand_centre_pressed"
+                android:endColor="@color/button_operand_edge_pressed">
+            </gradient>
+        </shape>
+    </item>
+</selector>

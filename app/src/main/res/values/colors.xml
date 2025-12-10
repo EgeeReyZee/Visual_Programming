@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+<!--    <color name="bg">#2b2238</color>-->
+<!--    <color name="button_numbers_centre">#543964</color>-->
+<!--    <color name="button_numbers_edge">#704c85</color>-->
+<!--    <color name="button_numbers_centre_pressed">#1e1424</color>-->
+<!--    <color name="button_numbers_edge_pressed">#3a2745</color>-->
+<!--    <color name="button_operand_edge">#bb9fc9</color>-->
+<!--    <color name="button_operand_centre">#a581b8</color>-->
+<!--    <color name="button_operand_edge_pressed">#926eae</color>-->
+<!--    <color name="button_operand_centre_pressed">#755d9a</color>-->
+
+<!--    <color name="bg">#154666</color>-->
+<!--    <color name="button_numbers_centre">#298073</color>-->
+<!--    <color name="button_numbers_edge">#298073</color>-->
+<!--    <color name="button_numbers_centre_pressed">#184C78</color>-->
+<!--    <color name="button_numbers_edge_pressed">#184C78</color>-->
+<!--    <color name="button_operand_edge">#438F68</color>-->
+<!--    <color name="button_operand_centre">#438F68</color>-->
+<!--    <color name="button_operand_edge_pressed">#5A9C56</color>-->
+<!--    <color name="button_operand_centre_pressed">#5A9C56</color>-->
+
+    <color name="bg">#012030</color>
+    <color name="button_numbers_centre">#13678A</color>
+    <color name="button_numbers_edge">#13678A</color>
+    <color name="button_numbers_centre_pressed">#45C4B0</color>
+    <color name="button_numbers_edge_pressed">#45C4B0</color>
+    <color name="button_operand_edge">#9AEBA3</color>
+    <color name="button_operand_centre">#9AEBA3</color>
+    <color name="button_operand_edge_pressed">#DAFDBA</color>
+    <color name="button_operand_centre_pressed">#DAFDBA</color>
+
+<!--    <color name="bg">#D9C6BA</color>-->
+<!--    <color name="button_numbers_centre">#8C6542</color>-->
+<!--    <color name="button_numbers_edge">#8C6542</color>-->
+<!--    <color name="button_numbers_centre_pressed">#593C19</color>-->
+<!--    <color name="button_numbers_edge_pressed">#593C19</color>-->
+<!--    <color name="button_operand_edge">#731B07</color>-->
+<!--    <color name="button_operand_centre">#731B07</color>-->
+<!--    <color name="button_operand_edge_pressed">#400601</color>-->
+<!--    <color name="button_operand_centre_pressed">#400601</color>-->
+</resources>

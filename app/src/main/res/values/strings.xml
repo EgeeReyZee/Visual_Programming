@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">Multi App</string>
+    <string name="Div_0_error">Div 0 error</string>
+
+    <string name="fa_calculator">&#xf1ec;</string>
+    <string name="fa_music">&#xf001;</string>
+    <string name="fa_play">&#xf04b;</string>
+    <string name="fa_play_circle">&#xf144;</string>
+    <string name="fa_pause">&#xf04c;</string>
+    <string name="fa_pause_circle">&#xf28b;</string>
+    <string name="fa_stop">&#xf04d;</string>
+    <string name="fa_step_forward">&#xf051;</string>
+    <string name="fa_step_backward">&#xf048;</string>
+    <string name="fa_forward">&#xf04e;</string>
+    <string name="fa_backward">&#xf04a;</string>
+    <string name="fa_rotate_left">&#xf0e2;</string>
+    <string name="fa_rotate_right">&#xf01e;</string>
+    <string name="fa_volume_up">&#xf028;</string>
+    <string name="fa_volume_down">&#xf027;</string>
+    <string name="fa_repeat">&#xf01e;</string>
+    <string name="fa_android">&#xf17b;</string>
+    <string name="fa_gear">&#xf013;</string>
+    <string name="fa_navicon">&#xf0c9;</string>
+    <string name="fa_ellipsis_v">&#xf142;</string>
+    <string name="fa_map">&#xf279;</string>
+    <string name="fa_hourglass_1">&#xf251;</string>
+    <string name="fa_hourglass_2">&#xf252;</string>
+    <string name="fa_hourglass_3">&#xf253;</string>
+    <string name="fa_wifi">&#xf1eb;</string>
+    <string name="fa_signal">&#xf012;</string>
+    <string name="fa_desktop">&#xf108;</string>
+    <string name="fa_plug">&#xf1e6;</string>
+    <string name="app_name2">RangeSeekBar Demo</string>
+    <string name="demo_min_label">Min</string>
+    <string name="demo_max_label">Max</string>
+</resources>
