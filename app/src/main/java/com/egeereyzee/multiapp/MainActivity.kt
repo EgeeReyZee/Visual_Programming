@@ -7,15 +7,17 @@ import android.widget.Button
 import com.egeereyzee.multiapp.CalculatorActivity
 import android.view.animation.AnimationUtils
 import android.view.animation.Animation
+import androidx.cardview.widget.CardView
+import androidx.constraintlayout.widget.ConstraintLayout
 
 class MainActivity : AppCompatActivity() {
     private lateinit var buttonSettings: Button
-    private lateinit var buttonCalculator: Button
-    private lateinit var buttonMediaPlayer: Button
-    private lateinit var buttonLocator: Button
-    private lateinit var buttonNetwork: Button
-    private lateinit var buttonClient: Button
-    private lateinit var buttonSocket: Button
+    private lateinit var buttonCalculator: CardView
+    private lateinit var buttonMediaPlayer: CardView
+    private lateinit var buttonLocator: CardView
+    private lateinit var buttonNetwork: CardView
+    private lateinit var buttonClient: CardView
+    private lateinit var buttonSocket: CardView
     private lateinit var rotateAnimation: Animation
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -53,7 +55,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         buttonLocator.setOnClickListener {
-            val intent = Intent(this, DevelopingActivity::class.java)
+            val intent = Intent(this, LocationActivity::class.java)
             startActivity(intent)
         }
 
@@ -68,7 +70,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         buttonSocket.setOnClickListener {
-            val intent = Intent(this, DevelopingActivity::class.java)
+            val intent = Intent(this, SocketsActivity::class.java)
             startActivity(intent)
         }
     }

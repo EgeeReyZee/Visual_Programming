@@ -110,6 +110,7 @@
         android:layout_height="0dp"
         android:background="@drawable/button_number_shape_circled"
         android:fontFamily="@font/nunito"
+        android:stateListAnimator="@animator/number_button_animator"
         android:text="7"
         android:textColor="@color/white"
         app:autoSizeTextType="uniform"

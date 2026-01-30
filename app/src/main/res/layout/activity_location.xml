@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingVertical="30dp"
+        android:gravity="center">
+        <TextView
+            android:id="@+id/textViewLatitude"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:textSize="36dp"
+            android:text="Latitude: "/>
+        <TextView
+            android:id="@+id/textViewLongitude"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:textSize="36dp"
+            android:text="Longitude: "/>
+        <TextView
+            android:id="@+id/textViewAltitude"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:textSize="36dp"
+            android:text="Altitude: "/>
+        <TextView
+            android:id="@+id/textViewCurrentTime"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:autoSizeTextType="uniform"
+            android:text="Current Time: "
+            android:layout_marginBottom="50dp"
+            android:maxLines="2"/>
+        <Button
+            android:id="@+id/buttonGetLocation"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:background="@drawable/button_number_shape_circled"
+            android:text="GET"
+            android:textSize="36dp"/>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

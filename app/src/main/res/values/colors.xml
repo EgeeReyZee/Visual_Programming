@@ -37,6 +37,13 @@
     <color name="button_operand_centre">#9AEBA3</color>
     <color name="button_operand_edge_pressed">#DAFDBA</color>
     <color name="button_operand_centre_pressed">#DAFDBA</color>
+    <color name="transparent">#00FFFFFF</color>
+    <color name="green1">#78BA00</color>
+    <color name="violet1">#4617b4</color>
+    <color name="yellow1">#F4B300</color>
+    <color name="pink1">#FF76BC</color>
+    <color name="blue1">#006AC1</color>
+    <color name="purple1">#AA40FF</color>
 
 <!--    <color name="bg">#D9C6BA</color>-->
 <!--    <color name="button_numbers_centre">#8C6542</color>-->
