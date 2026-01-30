@@ -1,0 +1,68 @@
+<!-- res/animator/button_state_animator.xml -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Нажатое состояние -->
+    <item android:state_pressed="true">
+        <set>
+            <!-- Анимация увеличения радиуса углов с 16dp до 32dp -->
+            <objectAnimator
+                android:duration="200"
+                android:propertyName="cornerRadius"
+                android:valueFrom="16dp"
+                android:valueTo="32dp"
+                android:valueType="floatType"
+                android:interpolator="@android:interpolator/accelerate_decelerate" />
+
+            <!-- Анимация изменения центрального цвета градиента -->
+            <objectAnimator
+                android:duration="200"
+                android:propertyName="startColor"
+                android:valueFrom="@color/button_numbers_centre"
+                android:valueTo="@color/button_numbers_centre_pressed"
+                android:valueType="colorType"
+                android:interpolator="@android:interpolator/accelerate_decelerate" />
+
+            <!-- Анимация изменения краевого цвета градиента -->
+            <objectAnimator
+                android:duration="200"
+                android:propertyName="endColor"
+                android:valueFrom="@color/button_numbers_edge"
+                android:valueTo="@color/button_numbers_edge_pressed"
+                android:valueType="colorType"
+                android:interpolator="@android:interpolator/accelerate_decelerate" />
+        </set>
+    </item>
+
+    <!-- Нормальное состояние (возврат) -->
+    <item android:state_pressed="false">
+        <set>
+            <!-- Анимация уменьшения радиуса углов с 32dp до 16dp -->
+            <objectAnimator
+                android:duration="200"
+                android:propertyName="cornerRadius"
+                android:valueFrom="32dp"
+                android:valueTo="16dp"
+                android:valueType="floatType"
+                android:interpolator="@android:interpolator/accelerate_decelerate" />
+
+            <!-- Анимация возврата центрального цвета -->
+            <objectAnimator
+                android:duration="200"
+                android:propertyName="startColor"
+                android:valueFrom="@color/button_numbers_centre_pressed"
+                android:valueTo="@color/button_numbers_centre"
+                android:valueType="colorType"
+                android:interpolator="@android:interpolator/accelerate_decelerate" />
+
+            <!-- Анимация возврата краевого цвета -->
+            <objectAnimator
+                android:duration="200"
+                android:propertyName="endColor"
+                android:valueFrom="@color/button_numbers_edge_pressed"
+                android:valueTo="@color/button_numbers_edge"
+                android:valueType="colorType"
+                android:interpolator="@android:interpolator/accelerate_decelerate" />
+        </set>
+    </item>
+
+</selector>

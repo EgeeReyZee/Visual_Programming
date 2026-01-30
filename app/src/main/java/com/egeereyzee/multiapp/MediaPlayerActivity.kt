@@ -23,6 +23,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.egeereyzee.multiapp.RangeSeekBar
 import androidx.recyclerview.widget.RecyclerView
 import java.util.concurrent.TimeUnit
 import java.io.File
@@ -49,8 +50,7 @@ class MediaPlayerActivity : AppCompatActivity() {
 
     private lateinit var seekBarProgress: SeekBar
     private lateinit var seekBarVolume: SeekBar
-    private lateinit var seekBarStart: SeekBar
-    private lateinit var seekBarEnd: SeekBar
+    private lateinit var rangeSeekBarPlayBackLoop: RangeSeekBar
 
     private var mediaPlayer: MediaPlayer? = null
     private var currentTrackIndex = 0
@@ -122,8 +122,7 @@ class MediaPlayerActivity : AppCompatActivity() {
 
         seekBarProgress = findViewById(R.id.seekBarMusic)
         seekBarVolume = findViewById(R.id.seekBarVolume)
-        seekBarStart = findViewById(R.id.seekBarStart)
-        seekBarEnd = findViewById(R.id.seekBarEnd)
+        rangeSeekBarPlayBackLoop = findViewById(R.id.rangeSeekBarPlayBackLoop)
     }
 
     private fun checkPermissions() {
@@ -238,11 +237,9 @@ class MediaPlayerActivity : AppCompatActivity() {
 
                 seekBarProgress.max = duration
                 seekBarProgress.progress = 0
-
-                seekBarStart.max = duration
-                seekBarEnd.max = duration
-                seekBarStart.progress = 0
-                seekBarEnd.progress = duration
+                rangeSeekBarPlayBackLoop.maxValue = duration
+                rangeSeekBarPlayBackLoop.rightThumbValue = duration
+                rangeSeekBarPlayBackLoop.leftThumbValue = 0
 
                 startPosition = 0
                 endPosition = duration
@@ -304,35 +301,23 @@ class MediaPlayerActivity : AppCompatActivity() {
             override fun onStopTrackingTouch(seekBar: SeekBar?) {}
         })
 
-        seekBarStart.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
-            override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
-                if (fromUser) {
-                    startPosition = progress
-                    if (startPosition > endPosition) {
-                        startPosition = endPosition
-                        seekBarStart.progress = startPosition
-                    }
-                    textViewStartTime.text = formatTime(startPosition)
-                }
-            }
-            override fun onStartTrackingTouch(seekBar: SeekBar?) {}
-            override fun onStopTrackingTouch(seekBar: SeekBar?) {}
-        })
+        rangeSeekBarPlayBackLoop.onRangeChangeListener = object : RangeSeekBar.OnRangeChangeListener {
+            override fun onRangeChanged(leftValue: Int, rightValue: Int) {
+                startPosition = leftValue
+                endPosition = rightValue
 
-        seekBarEnd.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
-            override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
-                if (fromUser) {
-                    endPosition = progress
-                    if (endPosition < startPosition) {
-                        endPosition = startPosition
-                        seekBarEnd.progress = endPosition
+                textViewStartTime.text = formatTime(startPosition)
+                textViewEndTime.text = formatTime(endPosition)
+
+                val minDifference = 1
+                if (endPosition - startPosition < minDifference) {
+                    if (startPosition + minDifference <= rangeSeekBarPlayBackLoop.maxValue) {
+                        endPosition = startPosition + minDifference
+                        rangeSeekBarPlayBackLoop.rightThumbValue = endPosition
                     }
-                    textViewEndTime.text = formatTime(endPosition)
                 }
             }
-            override fun onStartTrackingTouch(seekBar: SeekBar?) {}
-            override fun onStopTrackingTouch(seekBar: SeekBar?) {}
-        })
+        }
     }
 
     private fun setupButtons() {

@@ -5,150 +5,539 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/bg"
-    android:padding="0dp">
+    android:paddingHorizontal="8dp"
+    android:paddingVertical="16dp">
 
     <TextView
         android:id="@+id/textViewTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:fontFamily="@font/nunito"
         android:text="Multi App Hub"
         android:textColor="@color/white"
-        android:textSize="36sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:paddingHorizontal="32dp"
+        android:gravity="center"
+        app:autoSizeTextType="uniform"
+        app:autoSizeMaxTextSize="400sp"
+        app:autoSizeMinTextSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineH7"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineV4"
+        app:layout_constraintStart_toStartOf="@+id/guidelineV1"
+        app:layout_constraintTop_toTopOf="@+id/guidelineH8" />
 
     <Button
         android:id="@+id/buttonSettings"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:background="@android:color/transparent"
         android:fontFamily="@font/fontawesome"
         android:text="@string/fa_gear"
         android:textColor="@color/white"
-        android:textSize="32sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineH8"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineV4"
+        app:layout_constraintStart_toStartOf="@+id/guidelineV5"
+        app:layout_constraintTop_toTopOf="@+id/guidelineH0" />
 
-    <!-- Вертикальный LinearLayout для строк -->
-    <LinearLayout
-        android:id="@+id/mainLayout"
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineH0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.03"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineH1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.21"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineH2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.44"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineH3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.46"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineH4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.69"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineH5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.71"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineH6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.94"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineH7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.16" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineH8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.08"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineV1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.1"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineV2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.47"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineV3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.52"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineV4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.89"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineV5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.78"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/buttonCalculator"
+        app:layout_constraintDimensionRatio="1:1"
+        android:foreground="?android:attr/selectableItemBackground"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginBottom="32dp"
-        android:orientation="vertical"
-        android:weightSum="3"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewTitle">
+        android:clickable="true"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="4dp"
+        app:cardMaxElevation="8dp"
+        app:cardBackgroundColor="@color/transparent"
+        app:cardPreventCornerOverlap="false"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineH2"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineV2"
+        app:layout_constraintStart_toStartOf="@+id/guidelineV1"
+        app:layout_constraintTop_toTopOf="@+id/guidelineH1">
 
-        <!-- Строка 1 -->
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:orientation="horizontal"
-            android:weightSum="2">
+            android:layout_height="match_parent"
+            android:background="@color/green1">
 
-            <Button
-                android:id="@+id/buttonCalculator"
-                android:layout_width="0dp"
+            <TextView
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="8dp"
-                android:layout_weight="1"
-                android:background="@drawable/button_apps_shape_circled"
-                android:fontFamily="@font/fontawesome"
-                android:text="@string/fa_calculator"
-                android:textColor="@color/white"
-                android:textSize="64sp" />
+                android:autoSizeTextType="uniform"
+                android:fontFamily="@font/nunito"
+                android:gravity="left"
+                android:maxLines="2"
+                android:padding="10dp"
+                android:text="калькулятор"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-            <Button
-                android:id="@+id/buttonLocator"
+
+            <ImageView
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_margin="8dp"
-                android:layout_weight="1"
-                android:background="@drawable/button_apps_shape_circled"
-                android:fontFamily="@font/fontawesome"
-                android:text="@string/fa_map"
-                android:textColor="@color/white"
-                android:textSize="64sp" />
-        </LinearLayout>
+                android:layout_height="0dp"
+                android:src="@drawable/calculator"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <!-- Строка 2 -->
-        <LinearLayout
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/border_stroke" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+<!--    <Button-->
+<!--        android:id="@+id/buttonCalculator"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="0dp"-->
+<!--        android:background="@drawable/button_apps_shape_circled"-->
+<!--        android:fontFamily="@font/fontawesome"-->
+<!--        android:text="@string/fa_calculator"-->
+<!--        android:textColor="@color/white"-->
+<!--        app:autoSizeTextType="uniform"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/guidelineH2"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/guidelineV2"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/guidelineV1"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/guidelineH1" />-->
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/buttonMediaPlayer"
+        app:layout_constraintDimensionRatio="1:1"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clickable="true"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="4dp"
+        app:cardMaxElevation="8dp"
+        app:cardBackgroundColor="@color/transparent"
+        app:cardPreventCornerOverlap="false"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineH2"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineV4"
+        app:layout_constraintStart_toStartOf="@+id/guidelineV3"
+        app:layout_constraintTop_toTopOf="@+id/guidelineH1" >
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:orientation="horizontal"
-            android:weightSum="2">
+            android:layout_height="match_parent"
+            android:background="@color/violet1">
 
-            <Button
-                android:id="@+id/buttonMediaPlayer"
-                android:layout_width="0dp"
+            <TextView
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="8dp"
-                android:layout_weight="1"
-                android:background="@drawable/button_apps_shape_circled"
-                android:fontFamily="@font/fontawesome"
-                android:text="@string/fa_music"
-                android:textColor="@color/white"
-                android:textSize="64sp" />
+                android:autoSizeTextType="uniform"
+                android:fontFamily="@font/nunito"
+                android:gravity="left"
+                android:maxLines="2"
+                android:padding="10dp"
+                android:text="медиа плеер"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-            <Button
-                android:id="@+id/buttonNetwork"
+
+            <ImageView
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_margin="8dp"
-                android:layout_weight="1"
-                android:background="@drawable/button_apps_shape_circled"
-                android:fontFamily="@font/fontawesome"
-                android:text="@string/fa_signal"
-                android:textColor="@color/white"
-                android:textSize="64sp" />
-        </LinearLayout>
+                android:layout_height="0dp"
+                android:src="@drawable/calculator"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <!-- Строка 3 -->
-        <LinearLayout
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/border_stroke" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+<!--    <Button-->
+<!--        android:id="@+id/buttonMediaPlayer"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="0dp"-->
+<!--        android:background="@drawable/button_apps_shape_circled"-->
+<!--        android:fontFamily="@font/fontawesome"-->
+<!--        android:text="@string/fa_music"-->
+<!--        android:textColor="@color/white"-->
+<!--        app:autoSizeTextType="uniform"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/guidelineH2"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/guidelineV4"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/guidelineV3"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/guidelineH1" />-->
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/buttonLocator"
+        app:layout_constraintDimensionRatio="1:1"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clickable="true"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="4dp"
+        app:cardMaxElevation="8dp"
+        app:cardBackgroundColor="@color/transparent"
+        app:cardPreventCornerOverlap="false"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineH4"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineV2"
+        app:layout_constraintStart_toStartOf="@+id/guidelineV1"
+        app:layout_constraintTop_toTopOf="@+id/guidelineH3" >
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:orientation="horizontal"
-            android:weightSum="2">
+            android:layout_height="match_parent"
+            android:background="@color/yellow1">
 
-            <Button
-                android:id="@+id/buttonClient"
-                android:layout_width="0dp"
+            <TextView
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="8dp"
-                android:layout_weight="1"
-                android:background="@drawable/button_apps_shape_circled"
-                android:fontFamily="@font/fontawesome"
-                android:text="@string/fa_desktop"
-                android:textColor="@color/white"
-                android:textSize="64sp" />
+                android:autoSizeTextType="uniform"
+                android:fontFamily="@font/nunito"
+                android:gravity="left"
+                android:maxLines="2"
+                android:padding="10dp"
+                android:text="геолокатор"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-            <Button
-                android:id="@+id/buttonSocket"
+
+            <ImageView
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_margin="8dp"
-                android:layout_weight="1"
-                android:background="@drawable/button_apps_shape_circled"
-                android:fontFamily="@font/fontawesome"
-                android:text="@string/fa_plug"
-                android:textColor="@color/white"
-                android:textSize="64sp" />
-        </LinearLayout>
+                android:layout_height="0dp"
+                android:src="@drawable/calculator"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/border_stroke" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+<!--    <Button-->
+<!--        android:id="@+id/buttonLocator"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="0dp"-->
+<!--        android:background="@drawable/button_apps_shape_circled"-->
+<!--        android:fontFamily="@font/fontawesome"-->
+<!--        android:text="@string/fa_map"-->
+<!--        android:textColor="@color/white"-->
+<!--        app:autoSizeTextType="uniform"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/guidelineH4"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/guidelineV2"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/guidelineV1"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/guidelineH3" />-->
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/buttonNetwork"
+        app:layout_constraintDimensionRatio="1:1"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clickable="true"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="4dp"
+        app:cardMaxElevation="8dp"
+        app:cardBackgroundColor="@color/transparent"
+        app:cardPreventCornerOverlap="false"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineH4"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineV4"
+        app:layout_constraintStart_toStartOf="@+id/guidelineV3"
+        app:layout_constraintTop_toTopOf="@+id/guidelineH3" >
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/pink1">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:autoSizeTextType="uniform"
+                android:fontFamily="@font/nunito"
+                android:gravity="left"
+                android:maxLines="2"
+                android:padding="10dp"
+                android:text="сеть"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:src="@drawable/calculator"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/border_stroke" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+<!--    <Button-->
+<!--        android:id="@+id/buttonNetwork"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="0dp"-->
+<!--        android:background="@drawable/button_apps_shape_circled"-->
+<!--        android:fontFamily="@font/fontawesome"-->
+<!--        android:text="@string/fa_signal"-->
+<!--        android:textColor="@color/white"-->
+<!--        app:autoSizeTextType="uniform"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/guidelineH4"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/guidelineV4"-->
+<!--        app:layout_constraintHorizontal_bias="1.0"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/guidelineV3"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/guidelineH3"-->
+<!--        app:layout_constraintVertical_bias="1.0" />-->
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/buttonClient"
+        app:layout_constraintDimensionRatio="1:1"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clickable="true"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="4dp"
+        app:cardMaxElevation="8dp"
+        app:cardBackgroundColor="@color/transparent"
+        app:cardPreventCornerOverlap="false"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineH6"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineV2"
+        app:layout_constraintStart_toStartOf="@+id/guidelineV1"
+        app:layout_constraintTop_toTopOf="@+id/guidelineH5" >
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/blue1">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:autoSizeTextType="uniform"
+                android:fontFamily="@font/nunito"
+                android:gravity="left"
+                android:maxLines="2"
+                android:padding="10dp"
+                android:text="клиент сервер"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:src="@drawable/calculator"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/border_stroke" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+<!--    <Button-->
+<!--        android:id="@+id/buttonClient"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="0dp"-->
+<!--        android:background="@drawable/button_apps_shape_circled"-->
+<!--        android:fontFamily="@font/fontawesome"-->
+<!--        android:text="@string/fa_desktop"-->
+<!--        android:textColor="@color/white"-->
+<!--        app:autoSizeTextType="uniform"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/guidelineH6"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/guidelineV2"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/guidelineV1"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/guidelineH5" />-->
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/buttonSocket"
+        app:layout_constraintDimensionRatio="1:1"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clickable="true"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="4dp"
+        app:cardMaxElevation="8dp"
+        app:cardBackgroundColor="@color/transparent"
+        app:cardPreventCornerOverlap="false"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineH6"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineV4"
+        app:layout_constraintStart_toStartOf="@+id/guidelineV3"
+        app:layout_constraintTop_toTopOf="@+id/guidelineH5" >
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/purple1">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:autoSizeTextType="uniform"
+                android:fontFamily="@font/nunito"
+                android:gravity="left"
+                android:maxLines="2"
+                android:padding="10dp"
+                android:text="сокет"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:src="@drawable/calculator"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/border_stroke" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+<!--    <Button-->
+<!--        android:id="@+id/buttonSocket"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="0dp"-->
+<!--        android:background="@drawable/button_apps_shape_circled"-->
+<!--        android:fontFamily="@font/fontawesome"-->
+<!--        android:text="@string/fa_plug"-->
+<!--        android:textColor="@color/white"-->
+<!--        app:autoSizeTextType="uniform"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/guidelineH6"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/guidelineV4"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/guidelineV3"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/guidelineH5" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -330,62 +330,58 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/linearLayoutVolume" />
 
-            <LinearLayout
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
                 android:layout_marginTop="8dp"
                 app:layout_constraintTop_toBottomOf="@id/textViewRangeLabel">
 
-                    <TextView
-                        android:id="@+id/textViewEndTime"
-                        android:layout_width="40dp"
-                        android:layout_height="wrap_content"
-                        android:text="00:00"
-                        android:textColor="@color/button_operand_edge"
-                        android:textSize="12sp"/>
-                    <SeekBar
-                        android:id="@+id/seekBarStart"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:maxHeight="3dp"
-                        android:minHeight="3dp"
-                        android:thumb="@drawable/seekbar_thumb_small"
-                        android:progressDrawable="@drawable/seekbar_progress_transparent"/>
-                    <TextView
-                        android:id="@+id/textViewStartTime"
-                        android:layout_width="40dp"
-                        android:layout_height="wrap_content"
-                        android:text="00:00"
-                        android:gravity="end"
-                        android:textColor="@color/button_operand_edge"
-                        android:textSize="12sp"/>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
+                <TextView
+                    android:id="@+id/textViewStartTime"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:gravity="center_vertical"
-                    android:layout_marginTop="8dp">
-                    <TextView
-                        android:layout_width="40dp"
-                        android:layout_height="wrap_content"
-                        android:text="End"
-                        android:textColor="@color/white"
-                        android:textSize="12sp"/>
-                    <SeekBar
-                        android:id="@+id/seekBarEnd"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:maxHeight="3dp"
-                        android:minHeight="3dp"
-                        android:thumb="@drawable/seekbar_thumb_small"
-                        android:progressDrawable="@drawable/seekbar_progress"/>
+                    android:text="00:00"
+                    android:textColor="@color/button_operand_edge"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent" />
 
-                </LinearLayout>
-            </LinearLayout>
+                <TextView
+                    android:id="@+id/textViewEndTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="00:00"
+                    android:gravity="end"
+                    android:textColor="@color/button_operand_edge"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent" />
 
+                <com.egeereyzee.multiapp.RangeSeekBar
+                    android:id="@+id/rangeSeekBarPlayBackLoop"
+                    android:layout_width="0dp"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    app:layout_constraintStart_toEndOf="@id/textViewStartTime"
+                    app:layout_constraintEnd_toStartOf="@id/textViewEndTime"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:minValue="0"
+                    app:maxValue="100"
+                    app:leftThumbValue="0"
+                    app:rightThumbValue="100"
+                    app:trackColor="#E0E0E0"
+                    app:trackProgressColor="#2196F3"
+                    app:thumbColor="#FFFFFF"
+                    app:thumbBorderColor="#2196F3"
+                    app:trackHeight="4dp"
+                    app:thumbRadius="8dp" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
+
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
