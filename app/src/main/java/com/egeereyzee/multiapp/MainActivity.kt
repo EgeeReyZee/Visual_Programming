@@ -18,6 +18,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var buttonNetwork: CardView
     private lateinit var buttonClient: CardView
     private lateinit var buttonSocket: CardView
+    private lateinit var buttonSocket2: CardView
     private lateinit var rotateAnimation: Animation
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,6 +38,7 @@ class MainActivity : AppCompatActivity() {
         buttonNetwork = findViewById(R.id.buttonNetwork)
         buttonClient = findViewById(R.id.buttonClient)
         buttonSocket = findViewById(R.id.buttonSocket)
+        buttonSocket2 = findViewById(R.id.buttonSocket2)
     }
 
     private fun setupButtons() {
@@ -70,6 +72,11 @@ class MainActivity : AppCompatActivity() {
         }
 
         buttonSocket.setOnClickListener {
+            val intent = Intent(this, SocketsActivity::class.java)
+            startActivity(intent)
+        }
+
+        buttonSocket2.setOnClickListener {
             val intent = Intent(this, SocketsActivity::class.java)
             startActivity(intent)
         }
