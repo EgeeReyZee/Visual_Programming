@@ -56,6 +56,11 @@
             android:theme="@style/Theme.AppCompat.Light.DarkActionBar"
             android:exported="false" />
 
+        <activity
+            android:name="com.egeereyzee.multiapp.Sockets2Activity"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar"
+            android:exported="false" />
+
     </application>
 
 </manifest>

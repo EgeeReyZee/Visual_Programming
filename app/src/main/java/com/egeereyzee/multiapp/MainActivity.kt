@@ -77,7 +77,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         buttonSocket2.setOnClickListener {
-            val intent = Intent(this, SocketsActivity::class.java)
+            val intent = Intent(this, Sockets2Activity::class.java)
             startActivity(intent)
         }
     }
