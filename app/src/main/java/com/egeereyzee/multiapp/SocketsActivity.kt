@@ -19,7 +19,7 @@ class SocketsActivity : AppCompatActivity() {
     private var isClientRunning = false
     private lateinit var handler: Handler
 
-    private val SERVER_IP = "192.168.0.19"
+    private val SERVER_IP = "10.146.144.115"
     private val SERVER_PORT = "5555"
 
     override fun onCreate(savedInstanceState: Bundle?) {
